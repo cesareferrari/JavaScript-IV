@@ -29,3 +29,85 @@ const person1 = new Person({
 });
 
 console.log(person1);
+person1.speak();
+
+
+
+// Instructor
+// specialty what the Instructor is good at i.e. 'redux'
+// favLanguage i.e. 'JavaScript, Python, Elm etc.'
+// catchPhrase i.e. Don't forget the homies
+// Instructor has the following methods:
+// demo receives a subject string as an argument and logs out the phrase 'Today we are learning about {subject}' where subject is the param passed in.
+// grade receives a student object and a subject string as arguments and logs out '{student.name} receives a perfect score on {subject}'
+
+class Instructor extends Person {
+  constructor(object) {
+    super(object);
+    this.specialty = object.specialty;
+    this.favLanguage = object.favLanguage;
+    this.catchPhrase = object.catchPhrase;
+  }
+
+  demo(subject) {
+    console.log(`Today we are learning about ${subject}`);
+  }
+
+  grade(student, subject) {
+    console.log(`${student.name} receives a perfect score on ${subject}`);
+  }
+}
+
+
+const cameron = new Instructor({
+  name: 'Cameron',
+  age: 31,
+  location: 'Utah',
+  specialty: 'Javascript',
+  favLanguage: 'HTML',
+  catchPhrase: 'I like bread'
+})
+
+console.log(cameron);
+cameron.demo('Slack');
+cameron.grade({name: 'Cesare'}, 'Javascript');
+
+
+
+// Student
+
+class Student extends Person {
+  constructor(object) {
+    super(object);
+    this.previousBackground = object.previousBackground;
+    this.className = object.className;
+    this.favSubjects = object.favSubjects; // array
+  }
+
+  listsSubjects() {
+    this.favSubjects.forEach(subject => console.log(subject));
+  }
+
+  PRAssignment(subject) {
+    console.log(`${this.name} has submitted a PR for ${subject}`);
+  }
+
+  sprintChallenge(subject) {
+    console.log(`${this.name} has begun sprint challenge on ${subject}`);
+  }
+}
+
+const cesare = new Student({
+  name: 'Cesare',
+  age: 21,
+  location: 'Pennsylvania',
+  previousBackground: 'Mechanic',
+  className: 'WEBPT5',
+  favSubjects: ['Javascript', 'HTML', 'CSS']
+})
+
+console.log(cesare);
+cesare.listsSubjects();
+cesare.PRAssignment('Javascript IV');
+cesare.sprintChallenge('Airport website');
+cesare.speak();
