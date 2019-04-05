@@ -111,3 +111,41 @@ cesare.listsSubjects();
 cesare.PRAssignment('Javascript IV');
 cesare.sprintChallenge('Airport website');
 cesare.speak();
+
+
+
+// Project Manager
+
+class ProjectManager extends Instructor {
+  constructor(object) {
+    super(object);
+    this.gradClassName = object.gradClassName;
+    this.favInstructor = object.favInstructor;
+  }
+
+  standUp(channel) {
+    console.log(`${this.name} announces to ${channel}, @channel standy times!`);
+  }
+
+  debugsCode(student, subject) {
+    console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+  }
+}
+
+const nate = new ProjectManager({
+  name: 'Nate',
+  age: 21,
+  location: 'Montana',
+  specialty: 'Javascript',
+  favLanguage: 'CSS',
+  catchPhrase: 'Hello howdy',
+  gradClassName: 'CS1',
+  favInstructor: 'Sean'
+})
+
+
+console.log(nate);
+nate.speak();
+nate.standUp('webpt5_nate');
+nate.debugsCode({name: 'Cesare'}, 'React');
+
