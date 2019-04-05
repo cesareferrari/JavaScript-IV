@@ -22,24 +22,18 @@ class Person {
 }
 
 
-const person1 = new Person({
-  name: 'Nate',
+const doc = new Person({
+  name: 'Doc',
   age: 20,
   location: 'California'
 });
 
-console.log(person1);
-person1.speak();
+console.log(doc);
+doc.speak();
 
 
 
 // Instructor
-// specialty what the Instructor is good at i.e. 'redux'
-// favLanguage i.e. 'JavaScript, Python, Elm etc.'
-// catchPhrase i.e. Don't forget the homies
-// Instructor has the following methods:
-// demo receives a subject string as an argument and logs out the phrase 'Today we are learning about {subject}' where subject is the param passed in.
-// grade receives a student object and a subject string as arguments and logs out '{student.name} receives a perfect score on {subject}'
 
 class Instructor extends Person {
   constructor(object) {
@@ -59,18 +53,32 @@ class Instructor extends Person {
 }
 
 
-const cameron = new Instructor({
-  name: 'Cameron',
+const grumpy = new Instructor({
+  name: 'Grumpy',
   age: 31,
   location: 'Utah',
   specialty: 'Javascript',
   favLanguage: 'HTML',
-  catchPhrase: 'I like bread'
+  catchPhrase: 'Go to hell!'
 })
 
-console.log(cameron);
-cameron.demo('Slack');
-cameron.grade({name: 'Cesare'}, 'Javascript');
+
+const happy = new Instructor({
+  name: 'Happy',
+  age: 33,
+  location: 'Pennsylvania',
+  specialty: 'React',
+  favLanguage: 'C',
+  catchPhrase: 'You are beautiful'
+})
+
+console.log(grumpy);
+grumpy.demo('Slack');
+grumpy.grade({name: 'Bashful'}, 'Javascript');
+
+console.log(happy);
+happy.demo('Tables');
+happy.grade({name: 'John'}, 'CSS');
 
 
 
@@ -97,8 +105,8 @@ class Student extends Person {
   }
 }
 
-const cesare = new Student({
-  name: 'Cesare',
+const bashful = new Student({
+  name: 'Bashful',
   age: 21,
   location: 'Pennsylvania',
   previousBackground: 'Mechanic',
@@ -106,11 +114,27 @@ const cesare = new Student({
   favSubjects: ['Javascript', 'HTML', 'CSS']
 })
 
-console.log(cesare);
-cesare.listsSubjects();
-cesare.PRAssignment('Javascript IV');
-cesare.sprintChallenge('Airport website');
-cesare.speak();
+console.log(bashful);
+bashful.listsSubjects();
+bashful.PRAssignment('Javascript IV');
+bashful.sprintChallenge('Airport website');
+bashful.speak();
+
+
+const dopey = new Student({
+  name: 'Dopey',
+  age: 21,
+  location: 'New Mexico',
+  previousBackground: 'Fisherman',
+  className: 'WEB6',
+  favSubjects: ['React', 'Javascript', 'HTML', 'CSS']
+})
+
+console.log(dopey);
+dopey.listsSubjects();
+dopey.PRAssignment('Watershed project');
+dopey.sprintChallenge('Javascript Challenge');
+dopey.speak();
 
 
 
@@ -132,8 +156,8 @@ class ProjectManager extends Instructor {
   }
 }
 
-const nate = new ProjectManager({
-  name: 'Nate',
+const sleepy = new ProjectManager({
+  name: 'Sleepy',
   age: 21,
   location: 'Montana',
   specialty: 'Javascript',
@@ -144,8 +168,26 @@ const nate = new ProjectManager({
 })
 
 
-console.log(nate);
-nate.speak();
-nate.standUp('webpt5_nate');
-nate.debugsCode({name: 'Cesare'}, 'React');
+console.log(sleepy);
+sleepy.speak();
+sleepy.standUp('webpt5_nate');
+sleepy.debugsCode({name: 'Cesare'}, 'React');
+
+
+const sneezy = new ProjectManager({
+  name: 'Sneezy',
+  age: 31,
+  location: 'Idaho',
+  specialty: 'HTML',
+  favLanguage: 'Javascript',
+  catchPhrase: 'You are a potato',
+  gradClassName: 'CS4',
+  favInstructor: 'Grumpy'
+})
+
+
+console.log(sneezy);
+sneezy.speak();
+sneezy.standUp('webpt5_nate');
+sneezy.debugsCode({name: 'Dopey'}, 'React');
 
