@@ -114,6 +114,18 @@ class Student extends Person {
   sprintChallenge(subject) {
     console.log(`${this.name} has begun sprint challenge on ${subject}`);
   }
+
+  graduate(instructor) {
+    const requiredGrade = 70;
+
+    if (this.grade >= requiredGrade) {
+      console.log(`${this.name} has a grade of ${this.grade}. Congrats, you graduated from Lambda School`);
+      return;
+    } 
+
+    instructor.gradeStudent(this);
+    console.log(`${this.name} has failed. He has been graded again by ${instructor.name} and the new grade is ${this.grade}`);
+  }
 }
 
 const bashful = new Student({
@@ -147,6 +159,7 @@ bashful.speak();
 
 grumpy.gradeStudent(bashful);
 console.log(`${bashful.name}'s grade is now: ${bashful.grade}`);
+bashful.graduate(grumpy);
 
 
 console.log(dopey);
@@ -157,6 +170,7 @@ dopey.speak();
 
 grumpy.gradeStudent(dopey);
 console.log(`${dopey.name}'s grade is now: ${dopey.grade}`);
+dopey.graduate(grumpy);
 
 
 
