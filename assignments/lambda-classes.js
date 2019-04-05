@@ -90,6 +90,7 @@ class Student extends Person {
     this.previousBackground = object.previousBackground;
     this.className = object.className;
     this.favSubjects = object.favSubjects; // array
+    this.grade = object.grade;
   }
 
   listsSubjects() {
@@ -111,15 +112,9 @@ const bashful = new Student({
   location: 'Pennsylvania',
   previousBackground: 'Mechanic',
   className: 'WEBPT5',
-  favSubjects: ['Javascript', 'HTML', 'CSS']
+  favSubjects: ['Javascript', 'HTML', 'CSS'],
+  grade: 94
 })
-
-console.log(bashful);
-bashful.listsSubjects();
-bashful.PRAssignment('Javascript IV');
-bashful.sprintChallenge('Airport website');
-bashful.speak();
-
 
 const dopey = new Student({
   name: 'Dopey',
@@ -127,8 +122,17 @@ const dopey = new Student({
   location: 'New Mexico',
   previousBackground: 'Fisherman',
   className: 'WEB6',
-  favSubjects: ['React', 'Javascript', 'HTML', 'CSS']
+  favSubjects: ['React', 'Javascript', 'HTML', 'CSS'],
+  grade: 12 
 })
+
+
+console.log(bashful);
+bashful.listsSubjects();
+bashful.PRAssignment('Javascript IV');
+bashful.sprintChallenge('Airport website');
+bashful.speak();
+
 
 console.log(dopey);
 dopey.listsSubjects();
