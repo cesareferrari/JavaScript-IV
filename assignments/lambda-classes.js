@@ -50,6 +50,16 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student.name} receives a perfect score on ${subject}`);
   }
+
+  gradeStudent(student) {
+    let randomNumber = Math.floor(Math.random() * 20)
+
+    if (student.grade > 50) {
+      student.grade = student.grade - randomNumber;
+    } else {
+      student.grade = student.grade + randomNumber;
+    }
+  }
 }
 
 
@@ -116,6 +126,8 @@ const bashful = new Student({
   grade: 94
 })
 
+
+
 const dopey = new Student({
   name: 'Dopey',
   age: 21,
@@ -133,12 +145,18 @@ bashful.PRAssignment('Javascript IV');
 bashful.sprintChallenge('Airport website');
 bashful.speak();
 
+grumpy.gradeStudent(bashful);
+console.log(`${bashful.name}'s grade is now: ${bashful.grade}`);
+
 
 console.log(dopey);
 dopey.listsSubjects();
 dopey.PRAssignment('Watershed project');
 dopey.sprintChallenge('Javascript Challenge');
 dopey.speak();
+
+grumpy.gradeStudent(dopey);
+console.log(`${dopey.name}'s grade is now: ${dopey.grade}`);
 
 
 
